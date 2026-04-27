@@ -50,6 +50,8 @@ Pour cet atelier, **vous avez 4 secrets à créer** dans votre Repository GitHUB
   
 **Dernière étape :** Pour engager l'automatisation de votre première Action, vous devez cliquer sur le gros boutton vert dans l'onglet supérieur [Actions] dans votre Repository Github. Le boutton s'intitule "I understand my workflows, go ahead and enable them". Ensuite procédez à une "petite" modification de votre fichier README.md GitHub puis faites un [Commit] pour déclancher l'action.   
 
+modification faite
+
 Notions acquises de cette séquence :  
 Vous avez vu dans cette séquence comment créer des secrets GiHUB afin de mettre en place de l'industrialisation continue.   
   
@@ -69,7 +71,7 @@ Objectif : Visualiser ses logs et découvrir ses erreurs
 ---------------------------------------------------
 Lors de vos développements, vous serez peut-être confronté à des erreurs systèmes car vous avez faits des erreurs de syntaxes dans votre code, faits de mauvaises déclarations de fonctions, appelez des modules inexistants, mal renseigner vos secrets, etc…  
 Les causes d'erreurs sont quasi illimitées. **Vous devez donc vous tourner vers les logs de votre système pour comprendre d'où vient le problème** :  
-Modification faite
+
 Vos log sont accéssible via les URL suivantes :  
 * Access log : {site}.pythonanywhere.com.access.log
 * Error log : {site}.pythonanywhere.com.error.log
