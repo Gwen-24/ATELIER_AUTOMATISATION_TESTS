@@ -3,43 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard API Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: #111827;
+            color: white;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Dashboard - API ipify</h1>
+<div class="container">
 
-    <p>
-        <a href="/run">Lancer un nouveau test</a>
-    </p>
+    <h1>Dashboard Testing : API ipify</h1>
+    <p class="subtitle">Suivi automatisé des tests API, métriques QoS et historique des runs.</p>
 
-    <h2>Historique des runs</h2>
+    <a class="btn" href="/run">Lancer les tests</a>
 
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>Date</th>
-            <th>API</th>
-            <th>PASS</th>
-            <th>FAIL</th>
-            <th>Total</th>
-            <th>Error Rate</th>
-            <th>Latency AVG</th>
-            <th>Latency P95</th>
-        </tr>
+    <div class="card">
+        <h2>Historique des runs</h2>
 
-        {% for run in runs %}
-        <tr>
-            <td>{{ run.timestamp }}</td>
-            <td>{{ run.api }}</td>
-            <td>{{ run.passed }}</td>
-            <td>{{ run.failed }}</td>
-            <td>{{ run.total }}</td>
-            <td>{{ run.error_rate }}</td>
-            <td>{{ run.latency_avg }} ms</td>
-            <td>{{ run.latency_p95 }} ms</td>
-        </tr>
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>API</th>
+                <th>PASS</th>
+                <th>FAIL</th>
+                <th>Total</th>
+                <th>Error Rate</th>
+                <th>Latency AVG</th>
+                <th>Latency P95</th>
+            </tr>
 
-    </table>
+            {% for run in runs %}
+            <tr>
+                <td>{{ run.timestamp }}</td>
+                <td><span class="badge">{{ run.api }}</span></td>
+                <td class="pass">{{ run.passed }}</td>
+                <td class="fail">{{ run.failed }}</td>
+                <td>{{ run.total }}</td>
+                <td>{{ run.error_rate }}</td>
+                <td>{{ run.latency_avg }} ms</td>
+                <td>{{ run.latency_p95 }} ms</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
 
 </body>
 </html>
