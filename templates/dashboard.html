@@ -1,1 +1,45 @@
-<h1>Dashboard API Tests</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard API Tests</title>
+</head>
+<body>
+
+    <h1>Dashboard - API ipify</h1>
+
+    <p>
+        <a href="/run">Lancer un nouveau test</a>
+    </p>
+
+    <h2>Historique des runs</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Date</th>
+            <th>API</th>
+            <th>PASS</th>
+            <th>FAIL</th>
+            <th>Total</th>
+            <th>Error Rate</th>
+            <th>Latency AVG</th>
+            <th>Latency P95</th>
+        </tr>
+
+        {% for run in runs %}
+        <tr>
+            <td>{{ run.timestamp }}</td>
+            <td>{{ run.api }}</td>
+            <td>{{ run.passed }}</td>
+            <td>{{ run.failed }}</td>
+            <td>{{ run.total }}</td>
+            <td>{{ run.error_rate }}</td>
+            <td>{{ run.latency_avg }} ms</td>
+            <td>{{ run.latency_p95 }} ms</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
